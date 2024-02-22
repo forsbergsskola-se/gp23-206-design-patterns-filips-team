@@ -1,16 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-public class EnemySpawner : MonoBehaviour
+public class ObjectPool : MonoBehaviour
 {
-    private const float _totalCooldown = 2f;
-    private float _currentCooldown;
     public GameObject objectPrefab;
     public int poolSize = 10;
 
-    [SerializeField] private List<GameObject> pooledObjects = new List<GameObject>();
-    
+    private List<GameObject> pooledObjects = new List<GameObject>();
+
     private void Start()
     {
         // Initialize the pool
@@ -21,30 +18,7 @@ public class EnemySpawner : MonoBehaviour
             pooledObjects.Add(obj);
         }
     }
-    
-    
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        this._currentCooldown -= Time.deltaTime;
-        if (this._currentCooldown <= 0f)
-        {
-            this._currentCooldown += _totalCooldown;
-            SpawnEnemies();
-        }
-    }
-    
-    void SpawnEnemies()
-    {
-        var maxAmount = Mathf.CeilToInt(Time.timeSinceLevelLoad / 7);
-        int amount = Random.Range(maxAmount, maxAmount + 3);
-        for (var i = 0; i < amount; i++)
-        {
-            Debug.Log("spawned");
-            GetObjectFromPool();
-        }
-    }
-    
+
     public GameObject GetObjectFromPool()
     {
         // Find an available object in the pool
@@ -70,5 +44,4 @@ public class EnemySpawner : MonoBehaviour
         obj.transform.position = Vector3.zero; // Reset position (optional)
         obj.transform.rotation = Quaternion.identity; // Reset rotation (optional)
     }
-
 }

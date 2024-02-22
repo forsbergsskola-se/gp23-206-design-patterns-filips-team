@@ -39,4 +39,6 @@ public class Projectile : MonoBehaviour
         Debug.Log("On Collision!");
         Destroy(this.gameObject);
     }
+    
+    
 }
