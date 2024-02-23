@@ -167,7 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ddbe3565334405988e1b761438b883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 407112692626712937, guid: e0dfde233baf04f978123be48615d95e, type: 3}
+  objectPrefab: {fileID: 3866403566117513866, guid: e0dfde233baf04f978123be48615d95e, type: 3}
+  poolSize: 10
 --- !u!1 &1546557891
 GameObject:
   m_ObjectHideFlags: 0
