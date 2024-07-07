@@ -44,8 +44,7 @@ public class EnemySpawner : MonoBehaviour
             GetObjectFromPool();
         }
     }
-    
-    public GameObject GetObjectFromPool()
+    public  GameObject GetObjectFromPool()
     {
         // Find an available object in the pool
         foreach (GameObject obj in pooledObjects)
@@ -67,8 +66,9 @@ public class EnemySpawner : MonoBehaviour
     {
         // Deactivate and reset the object before returning it to the pool
         obj.SetActive(false);
+        _currentCooldown = 0.0f;
         obj.transform.position = Vector3.zero; // Reset position (optional)
         obj.transform.rotation = Quaternion.identity; // Reset rotation (optional)
     }
-
+   
 }

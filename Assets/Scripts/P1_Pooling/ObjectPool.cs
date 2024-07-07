@@ -1,19 +1,30 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    public GameObject objectPrefab;
-    public int poolSize = 10;
+    [SerializeField] public GameObject projectilePrefab;
 
-    private List<GameObject> pooledObjects = new List<GameObject>();
+    public static ObjectPool instance;
+    [SerializeField] private int poolSize = 1;
+
+    [SerializeField] private List<GameObject> pooledObjects = new List<GameObject>();
+
+private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     private void Start()
     {
         // Initialize the pool
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject obj = Instantiate(objectPrefab);
+            GameObject obj = Instantiate(projectilePrefab);
             obj.SetActive(false);
             pooledObjects.Add(obj);
         }
@@ -21,27 +32,19 @@ public class ObjectPool : MonoBehaviour
 
     public GameObject GetObjectFromPool()
     {
-        // Find an available object in the pool
-        foreach (GameObject obj in pooledObjects)
+        for (int i = 0; i < pooledObjects.Count; i++)
         {
-            if (!obj.activeInHierarchy)
+            if (!pooledObjects[i].activeInHierarchy)
             {
-                obj.SetActive(true);
-                return obj;
+                return pooledObjects[i];
             }
         }
 
-        // If all objects are in use, expand the pool by instantiating a new object
-        GameObject newObj = Instantiate(objectPrefab);
-        pooledObjects.Add(newObj);
-        return newObj;
+        return null;
     }
-
     public void ReturnObjectToPool(GameObject obj)
     {
-        // Deactivate and reset the object before returning it to the pool
+        Debug.Log("object returned to pool in pool object");
         obj.SetActive(false);
-        obj.transform.position = Vector3.zero; // Reset position (optional)
-        obj.transform.rotation = Quaternion.identity; // Reset rotation (optional)
     }
 }
