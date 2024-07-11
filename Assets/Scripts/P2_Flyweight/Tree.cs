@@ -1,9 +1,9 @@
 using UnityEngine;
-
+/*
 public class Tree : MonoBehaviour
 {
     private SpriteRenderer _spriteRenderer;
-    private TreeSeasonColors _treeColors;
+    private TreeSeasonColorsV2 _treeColors;
     private int _tick;
     
     void Start()
@@ -24,9 +24,9 @@ public class Tree : MonoBehaviour
     /// Unfortunately, this solution uses up a lot of Memory :(
     /// </summary>
     void LoadColorInfos()
-    {
+    {   
         var fileContents = Resources.Load<TextAsset>("treeColors").text;
-        this._treeColors = JsonUtility.FromJson<TreeSeasonColors>(fileContents);
+        this._treeColors = JsonUtility.FromJson<TreeSeasonColorsV2>(fileContents);
     }
 
     void UpdateSeason()
@@ -35,3 +35,4 @@ public class Tree : MonoBehaviour
         this._spriteRenderer.color = this._treeColors.CurrentColor;
     }
 }
+*/

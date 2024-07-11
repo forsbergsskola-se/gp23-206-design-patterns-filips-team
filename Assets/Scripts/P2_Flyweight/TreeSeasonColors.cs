@@ -1,11 +1,10 @@
 using System;
 using UnityEngine;
-
+/*
 [Serializable]
 public class TreeSeasonColors
 {
     [SerializeField] private ColorInfo[] colors;
-    
     /// <summary>
     /// This returns the current color. The value changes every time
     /// `MoveNext` is invoked.
@@ -30,3 +29,4 @@ public class TreeSeasonColors
 
     private int _index;
 }
+*/
