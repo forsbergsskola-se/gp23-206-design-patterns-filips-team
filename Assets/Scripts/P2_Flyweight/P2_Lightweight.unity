@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc4526d6a8584617a87fede2e7adde5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treePrefab: {fileID: 2105173639354992659, guid: 819a96c2f4a214a3e94ab2339b33c649, type: 3}
+  treePrefab: {fileID: 8803581102905528556, guid: 819a96c2f4a214a3e94ab2339b33c649, type: 3}
 --- !u!1 &1633618191
 GameObject:
   m_ObjectHideFlags: 0

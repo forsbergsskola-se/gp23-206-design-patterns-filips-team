@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
-
+/*
 public class EnemySpawner : MonoBehaviour
 {
     private const float _totalCooldown = 2f;
@@ -72,3 +72,4 @@ public class EnemySpawner : MonoBehaviour
     }
    
 }
+*/

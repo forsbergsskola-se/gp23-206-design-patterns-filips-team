@@ -1,6 +1,6 @@
 using System.Threading;
 using UnityEngine;
-
+/*
 public class Enemy : MonoBehaviour
 {
     private Castle _castle;
@@ -55,3 +55,4 @@ public class Enemy : MonoBehaviour
 
 }
 
+*/

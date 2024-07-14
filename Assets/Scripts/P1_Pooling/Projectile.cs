@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
-
+/*
 public class Projectile : MonoBehaviour
 {
     private float _totalTime;
@@ -50,3 +50,4 @@ public class Projectile : MonoBehaviour
         _objectPool.ReturnObjectToPool(this.gameObject);
     }
 }
+*/

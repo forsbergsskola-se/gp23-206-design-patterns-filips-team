@@ -1,7 +1,7 @@
 using System.Threading;
 using UnityEngine;
 using Input = UnityEngine.Input;
-
+/*
 public class Player : MonoBehaviour
 {
     private Camera _cam;
@@ -55,3 +55,4 @@ public class Player : MonoBehaviour
         return Vector3.Distance(target.position, this.transform.position);
     }
 }
+*/

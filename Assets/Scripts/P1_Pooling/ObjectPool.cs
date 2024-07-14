@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class ObjectPool : MonoBehaviour
 {
     [SerializeField] public GameObject projectilePrefab;
@@ -48,3 +48,4 @@ private void Awake()
         obj.SetActive(false);
     }
 }
+*/
