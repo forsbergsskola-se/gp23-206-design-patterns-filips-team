@@ -5,11 +5,18 @@ using UnityEngine;
 public class TreeSeasonColors
 {
     [SerializeField] private ColorInfo[] colors;
+    public TreeSeasonColors(ColorInfo[] colors)
+    {
+       
+        this.colors = colors;
+        this._index = 0;
+    }
     
     /// <summary>
     /// This returns the current color. The value changes every time
     /// `MoveNext` is invoked.
     /// </summary>
+    
     public Color CurrentColor
     {
         get

@@ -1,16 +1,16 @@
 using UnityEngine;
-
+using System.Collections.Generic;
+/*
 public class Castle : MonoBehaviour
 {
-    public Projectile Projectile;
-
     private Transform _target;
     private int _enemyLayerMask;
     private float _currentCooldown;
     
     const float _maxCooldown = 0.8f;
 
-
+    [SerializeField]private GameObject prefabObject;
+    
     void Start()
     {
         this._enemyLayerMask = LayerMask.GetMask("Enemy");
@@ -40,10 +40,18 @@ public class Castle : MonoBehaviour
     }
 
     void Attack()
-    {
-        Instantiate(this.Projectile, this.transform.position, GetTargetDirection());
+    {   //Why isnt projectiles coming from the pool?
+        //Instantiate(this.Projectile, this.transform.position, GetTargetDirection());
+       
+       GameObject bullet = ObjectPool.instance.GetObjectFromPool();
+       if (bullet !=null)
+       {
+           bullet.transform.position = this.transform.position;
+           bullet.transform.rotation = GetTargetDirection();
+           bullet.SetActive(true);
+       }
+       Debug.Log("Attack invoked");
     }
-
     Quaternion GetTargetDirection()
     {
         var dir = this._target.transform.position - this.transform.position;
@@ -51,3 +59,4 @@ public class Castle : MonoBehaviour
         return Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }
+*/

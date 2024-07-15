@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
-
+/*
 public class Projectile : MonoBehaviour
 {
     private float _totalTime;
-    void Start()
+    public ObjectPool _objectPool;
+   void Start()
     {
+        _objectPool = ObjectPool.instance;
         FakeInitializeProjectile();
     }
 
@@ -30,13 +32,22 @@ public class Projectile : MonoBehaviour
         this.transform.Translate(Vector3.up * Time.deltaTime);
         if (this._totalTime > 10f)
         {
-            Destroy(this.gameObject);
+            //Why destroy?
+            //Destroy(this.gameObject);
+            ReturnToPool();
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("On Collision!");
-        Destroy(this.gameObject);
+         Debug.Log("OnCollisionEnter2D invoked");
+         ReturnToPool();
+
+    }
+
+    private void ReturnToPool()
+    { 
+        _totalTime = 0;
+        _objectPool.ReturnObjectToPool(this.gameObject);
     }
 }
+*/
